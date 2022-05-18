@@ -1,0 +1,20 @@
+// gradle plugin 설정
+pluginManagement {
+    repositories {
+        maven {
+            url 'http://mp-build:4000/repository/maven-public/'
+            allowInsecureProtocol = true
+        }
+    }
+}
+// project 의존성 설정
+dependencyResolutionManagement {
+    repositories {
+        maven {
+            url 'http://mp-build:4000/repository/maven-public/'
+            allowInsecureProtocol = true
+        }
+    }
+}
+rootProject.name = 'study'
+
