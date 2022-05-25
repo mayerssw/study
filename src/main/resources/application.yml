@@ -3,3 +3,9 @@ server:
 logging:
   level:
     root: info
+spring:
+  devtools:
+    livereload:
+      enabled: true
+  thymeleaf:
+    cache: false
