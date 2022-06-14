@@ -9,3 +9,22 @@ spring:
       enabled: true
   thymeleaf:
     cache: false
+
+  ## DB 연결
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@mp-dev-leehyun:1521/xe
+    username: leehyun
+    password: leehyun
+
+  ## MyBatis 설정
+  ## mapper.xml 위치 설정
+  mybatis:
+    mapper-locations: /xml/**/*.xml
+  ## model 프로퍼티 camelCase 설정
+    configuration:
+      map-underscore-to-camel-case: true
+  ## 패키지명 생략할 수 있도록 alias 설정
+    type-aliases-package: kr.co.bzsys.study.mapper
+
+
