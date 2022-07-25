@@ -21,9 +21,7 @@ public class ArticleController {
   @GetMapping("/test")
   public List<Board> creatArticle() {
 
-    List<Board> boardList = boardService.selectBoard();
-
-    return boardList;
+    return boardService.selectBoard();
   }
 
 }
