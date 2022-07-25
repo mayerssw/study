@@ -3,9 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>제바류ㅠㅠㅠㅠㅠㅠ</title>
+  <script th:inline="javascript"></script>
   <script src="/home.js"></script>
 </head>
 <body>
-<span th:text="${today}"></span>
+<div th:text="${today}"></div>
+<label for="hi">오늘 시간</label>
+<input type="text" name="hi" id="hi" th:value="${name} + '오늘 시간 : ' + ${today}">
+<a th:href="@{/join}">눌러눌러</a>
+<div th:with="day=${today}" th:text="${day}"></div>
+
+
 </body>
 </html>

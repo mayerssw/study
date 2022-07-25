@@ -13,6 +13,7 @@ public class HomeController {
   @RequestMapping(value="/home")
   public String requestToday(Model model) {
     model.addAttribute("today", LocalDateTime.now());
+    model.addAttribute("name", "혜인혜인");
     log.info("model" + model);
     return "home";
   }

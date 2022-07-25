@@ -8,6 +8,8 @@ spring:
     livereload:
       enabled: true
   thymeleaf:
+    prefix: classpath:templates/
+    suffix: .html
     cache: false
 
   ## DB 연결
@@ -20,7 +22,7 @@ spring:
   ## MyBatis 설정
   ## mapper.xml 위치 설정
   mybatis:
-    mapper-locations: /xml/**/*.xml
+    mapper-locations: classpath:mapper/**/*.xml
   ## model 프로퍼티 camelCase 설정
     configuration:
       map-underscore-to-camel-case: true

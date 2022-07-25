@@ -12,6 +12,7 @@ public class Article {
   @GeneratedValue
   private Long id;
 
+
   @Column
   private String title;
 
@@ -22,6 +23,9 @@ public class Article {
     this.id = id;
     this.title = title;
     this.content = content;
+  }
+
+  protected Article() {
   }
 
   @Override
