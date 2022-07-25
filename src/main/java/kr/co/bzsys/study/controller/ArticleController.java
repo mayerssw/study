@@ -6,14 +6,15 @@ import kr.co.bzsys.study.mapper.BoardMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 public class ArticleController {
 
   @Autowired
   BoardMapper boardMapper;
 
-  @GetMapping("/create")
+  @GetMapping("/test")
   public List<Board> creatArticle() {
     return boardMapper.selectBoard();
   }
