@@ -1,8 +1,8 @@
 package kr.co.bzsys.study.service;
 
 import java.util.List;
-import kr.co.bzsys.study.dto.Board;
-import kr.co.bzsys.study.mapper.BoardMapper;
+import kr.co.bzsys.study.dto.board.Board;
+import kr.co.bzsys.study.mapper.board.BoardMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package kr.co.bzsys.study.dto;
+package kr.co.bzsys.study.dto.board;
 
 import lombok.Data;
 
