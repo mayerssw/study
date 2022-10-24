@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+.login-form {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-field {
+    font-size: 14px;
+}
+
+.submit-btn {
+    font-size: 14px;
+}
