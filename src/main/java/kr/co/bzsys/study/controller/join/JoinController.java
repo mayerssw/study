@@ -1,7 +1,7 @@
 package kr.co.bzsys.study.controller.join;
 
 import kr.co.bzsys.study.dto.member.MemberDto;
-import kr.co.bzsys.study.service.MemberService;
+import oracle.jdbc.proxy.annotation.Post;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +17,14 @@ public class JoinController {
 
     return "join/insertJoin.html";
   }
+
+  @PostMapping("/userJoin")
+  public String userJoin() {
+
+    return "/";
+  }
+
+
 
 
 }

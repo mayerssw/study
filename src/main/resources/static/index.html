@@ -3,22 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>경비자료 출력</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<form id="form" name="form" action="/login" method="post">
-  <div>
-    <label for="userId"></label>
-    ID : <input type="text" id="userId" name="userId">
-  </div>
-  <div>
-    <label for="password"></label>
-    비밀번호 : <input type="password" id="password" name="password">
-  </div>
-  <button type="submit" id="login" name="login">로그인</button>
-</form>
-<a href="/join">
-  <button type="button" id="join" name="join">회원가입</button>
-</a>
-
+<div class="login-form">
+  <form id="form" name="form" action="/login" method="post">
+    <img src="images/logo_bz.png" width="200px" height="50px"/><br>
+    <input type="text" id="userId" name="userId" class="text-field" placeholder="아이디"><br>
+    <input type="password" id="password" name="password" class="text-field"  placeholder="패스워드"><br>
+    <button type="submit" id="login" name="login" class="submit-btn">로그인</button><br>
+    <a href="insertJoin" button type="submit" id="join" name="join" class="submit-btn">회원가입</abutton>
+  </form>
+</div>
 </body>
 </html>
