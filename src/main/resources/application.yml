@@ -19,6 +19,10 @@ spring:
     username: leehyun
     password: leehyun
 
+## JPA 연동 시 DB종류 명시
+  jpa:
+    database: oracle
+
   ## MyBatis 설정
   ## mapper.xml 위치 설정
 mybatis:
