@@ -23,7 +23,7 @@ public class JoinController {
   }
 
   @PostMapping("/insertJoin")
-  public String insertJoin(MemberDto memberDto) {
+  public String insertJoin(MemberDto memberDto) throws Exception {
 
     String userId = memberDto.getUserId();
     String password = memberDto.getPassword();
@@ -36,7 +36,7 @@ public class JoinController {
 
     boolean result = insertMemberService.insertMember(userId, password, userName);
     if(result) {
-      return "/expenseInsert";
+      return "index";
     }else {
       throw new RuntimeException("계정 업써요");
     }

@@ -18,7 +18,7 @@ public class InsertMemberServiceImpl implements InsertMemberService {
     if (cnt > 0) {
       return true;
     } else {
-      return false;
+      throw new RuntimeException("회원가입 저장 실패!");
     }
   }
 

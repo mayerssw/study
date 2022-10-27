@@ -21,19 +21,17 @@ public class LoginController {
 
     String userId = loginDto.getUserId();
     String password = loginDto.getPassword();
+
     boolean result = loginService.chkLoginUser(userId, password);
 
-    List<LoginDto> selUsers;
-    selUsers = loginService.selectLoginUser(userId);
-    String name = selUsers.get(0).getName();
-
-    model.addAttribute("userId", userId);
-    model.addAttribute("name", name);
-
-    if (result) {
-      return "/main/main";
-    } else {
+    if (!result) {
       return "/login/loginDenied";
+    } else {
+      List<LoginDto> selUsers = loginService.selectLoginUser(userId);
+      String name = selUsers.get(0).getName();
+      model.addAttribute("userId", userId);
+      model.addAttribute("name", name);
+      return "/main/main";
     }
   }
 

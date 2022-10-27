@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 @Service
 public interface InsertMemberService {
 
-  boolean insertMember(String userId, String password, String userName);
+  boolean insertMember(String userId, String password, String userName) throws Exception;
 
 
 }
