@@ -7,8 +7,13 @@
 <body>
 <div id="container">
   <form>
-    <p th:text="${name}"></p>
-    로그인 !
+    <div>
+      로그인 : <span th:text="${name}"></span>
+      <a href="/"><input type="button" id="logout" name="logout" value="로그아웃"></a>
+    </div>
+    <div>
+      <input type="button" id="reg" name="reg" value="경비등록">
+    </div>
   </form>
 </div>
 </body>
