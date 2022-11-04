@@ -6,11 +6,11 @@
     /*JoinMapper*/
     INSERT INTO USERS( ID
                      , PASSWORD
-                     , NAME)
+                     , NAME
+                     , ROLE)
     VALUES (#{userId}
     ,#{password}
-    ,#{userName})
-
-
+    ,#{userName}
+    ,'ROLE_USER')
   </insert>
 </mapper>

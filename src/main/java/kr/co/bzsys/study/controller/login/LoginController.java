@@ -1,13 +1,10 @@
 package kr.co.bzsys.study.controller.login;
 
-import java.util.List;
-import kr.co.bzsys.study.dto.login.LoginDto;
 import kr.co.bzsys.study.service.LoginService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Slf4j
 @Controller
@@ -16,23 +13,19 @@ public class LoginController {
   @Autowired
   LoginService loginService;
 
-  @RequestMapping(value = "/login")
-  public String selectLoginUser(LoginDto loginDto, Model model) {
+  @GetMapping(value = "/login")
+  public String selectLoginUser() {
+    return "/index";
+  }
 
-    String userId = loginDto.getUserId();
-    String password = loginDto.getPassword();
+  @GetMapping(value = "/loginSuccess")
+  public String successLogin() {
+    return "/main/main";
+  }
 
-    boolean result = loginService.chkLoginUser(userId, password);
-
-    if (!result) {
-      return "/login/loginDenied";
-    } else {
-      List<LoginDto> selUsers = loginService.selectLoginUser(userId);
-      String name = selUsers.get(0).getName();
-      model.addAttribute("userId", userId);
-      model.addAttribute("name", name);
-      return "/main/main";
-    }
+  @GetMapping(value = "/loginDenied")
+  public String failedLogin() {
+    return "/login/loginDenied";
   }
 
 }

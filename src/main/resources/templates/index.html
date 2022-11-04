@@ -7,10 +7,13 @@
 </head>
 <body>
 <div class="login-form">
-  <form id="form" name="form" action="/login" method="post">
+  <form th:action="@{/login}" method="post">
+    <!--csrf 설정을 해두면 시큐리티에서 csrf체크해서 403에러 남......-->
+<!--    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">-->
+    <div th:if="${param.error}"></div>
     <img src="/images/logo_bz.png" width="200px" height="50px" alt="logo"/><br>
     <label for="userId"></label>
-    <input type="text" id="userId" name="userId" class="text-field" placeholder="아이디" required><br>
+    <input type="text" id="userId" name="username" class="text-field" placeholder="아이디" required><br>
     <label for="password"></label>
     <input type="password" id="password" name="password" class="text-field" placeholder="패스워드" required><br>
     <button type="submit" id="login" name="login" class="submit-btn">로그인</button>

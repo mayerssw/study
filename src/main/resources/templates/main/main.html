@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="UTF-8">
   <title>main</title>
@@ -8,8 +8,8 @@
 <div id="container">
   <form>
     <div>
-      로그인 : <span th:text="${name}"></span>
-      <a href="/"><input type="button" id="logout" name="logout" value="로그아웃"></a>
+      로그인 : <span sec:authentication="name"></span>
+      <a sec:authorize="isAuthenticated()" th:href="@{/logout}">로그아웃</a>
     </div>
     <div>
       <input type="button" id="reg" name="reg" value="경비등록">

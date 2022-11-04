@@ -3,9 +3,10 @@ package kr.co.bzsys.study.controller.join;
 import kr.co.bzsys.study.dto.MemberDto;
 import kr.co.bzsys.study.service.InsertMemberService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 
@@ -16,31 +17,22 @@ public class JoinController {
 
   @GetMapping("/moveJoin")
   public String moveJoin() {
-
-    System.out.println("회원가입 페이지 이동");
-
     return "join/insertJoin";
   }
 
-  @PostMapping("/insertJoin")
+  @RequestMapping("/insertJoin")
   public String insertJoin(MemberDto memberDto) throws Exception {
-
+    BCryptPasswordEncoder bcrypt = new BCryptPasswordEncoder(); // springSecurity password encode
     String userId = memberDto.getUserId();
-    String password = memberDto.getPassword();
+    String password = bcrypt.encode(memberDto.getPassword());
     String userName = memberDto.getUserName();
 
-    System.out.println(userId);
-    System.out.println(password);
-    System.out.println(userName);
-
-
     boolean result = insertMemberService.insertMember(userId, password, userName);
-    if(result) {
+    if (result) {
       return "index";
-    }else {
+    } else {
       throw new RuntimeException("계정 업써요");
     }
-
   }
 
 }
